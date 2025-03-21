@@ -1,13 +1,19 @@
-def bubble_sort(arr):
-    n = len(arr)
-    for i in range(n - 1):
-        for j in range(n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]  # Swap
-                print(arr)
-    return arr
+from typing import List
 
-# Example usage
-arr = [5, 3, 8, 1, 2]
-sorted_arr = bubble_sort(arr)
-print(sorted_arr)  # Output: [1, 2, 3, 5, 8]
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        
+        # Two-pointer approach (in-place modification)
+        unique_index = 0  
+        
+        for i in range(1, len(nums)):
+            if nums[i] != nums[unique_index]:
+                unique_index += 1
+                nums[unique_index] = nums[i]
+
+        return unique_index + 1  # Return the new length
+v = Solution()
+vo = v.removeDuplicates([1,1,2])
+print(vo)
