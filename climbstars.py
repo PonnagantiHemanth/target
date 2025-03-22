@@ -9,4 +9,3 @@ def Climb_stairs(n):
     return step[n]
 
 print(Climb_stairs(5))
-print("Heldddlo")
